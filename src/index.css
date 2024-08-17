@@ -65,3 +65,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.author {
+  width: 20rem;
+  margin-block: 1rem;
+  padding: 0.2rem 0.8rem;
+  border-left: 0.5rem solid #666;
+}
+
+.author__name {
+  font-size: 1.2rem;
+}
