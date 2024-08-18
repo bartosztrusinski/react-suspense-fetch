@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -24,7 +30,6 @@ a:hover {
 
 body {
   margin: 0;
-  padding: 1rem;
 }
 
 h1 {
@@ -53,6 +58,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+main {
+  width: min(40rem, 100%);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -67,12 +78,15 @@ button:focus-visible {
 }
 
 .author {
-  width: 20rem;
-  margin-block: 1rem;
-  padding: 0.2rem 0.8rem;
+  background-color: #2d2d2d;
+  border-radius: 0.1rem;
+  width: min(20rem, 100%);
+  padding: 1rem;
   border-left: 0.5rem solid #666;
+  margin-bottom: 1rem;
 }
 
 .author__name {
   font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
