@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import Author from './author/Author';
 import AuthorWithSuspense from './author/AuthorWithSuspense';
+import Posts from './post/Posts';
 
 export default function App() {
   return (
@@ -13,7 +14,11 @@ export default function App() {
           <AuthorWithSuspense />
         </Suspense>
       </section>
-      <section></section>
+      <section>
+        <Suspense fallback={<p>Loading posts...</p>}>
+          <Posts />
+        </Suspense>
+      </section>
     </main>
   );
 }
