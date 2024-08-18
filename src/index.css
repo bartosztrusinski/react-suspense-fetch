@@ -64,6 +64,10 @@ main {
   padding: 1rem;
 }
 
+section {
+  margin-block: 1.5rem;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -80,13 +84,35 @@ main {
 .author {
   background-color: #2d2d2d;
   border-radius: 0.1rem;
-  width: min(20rem, 100%);
-  padding: 1rem;
+  width: min(24rem, 100%);
+  padding: 1rem 0.8rem 1.2rem;
   border-left: 0.5rem solid #666;
-  margin-bottom: 1rem;
 }
 
 .author__name {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin-bottom: 0.2rem;
+}
+
+.post {
+  background-color: #333;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  margin-bottom: 1rem;
+}
+
+.post__title {
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.post__body {
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
 }
