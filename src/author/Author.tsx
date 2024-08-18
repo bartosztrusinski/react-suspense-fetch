@@ -1,24 +1,19 @@
 import { useEffect, useState } from 'react';
-
-type User = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-};
-
-const userUrl = new URL('https://jsonplaceholder.typicode.com/users/2');
-const fetcher = <T,>(url: URL): Promise<T> =>
-  fetch(url).then((res) => res.json());
+import { fetchUser, User } from '../utils/fetchUser';
 
 export default function Author() {
   const [author, setAuthor] = useState<User>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetcher<User>(userUrl).then((author) => setAuthor(author));
+    setIsLoading(true);
+
+    fetchUser(2)
+      .then((user) => setAuthor(user))
+      .then(() => setIsLoading(false));
   }, []);
 
-  if (!author) {
+  if (isLoading || !author) {
     return (
       <section className='author'>
         <p>Loading author...</p>
