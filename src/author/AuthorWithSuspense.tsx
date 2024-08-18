@@ -1,6 +1,7 @@
 import { fetchUser } from '../utils/fetchUser';
 import { wrapPromise } from '../utils/wrapPromise';
 
+// use wrapper to handle a promise within suspense
 const { read: getUser } = wrapPromise(fetchUser(5));
 
 export default function Author() {
