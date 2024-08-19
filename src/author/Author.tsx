@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
-import { fetchUser, User } from '../utils/fetchUser';
+import { fetchAuthor, type Author } from './fetchAuthor';
 import AuthorSkeleton from './AuthorSkeleton';
 import { delayPromise } from '../utils/delayPromise';
 
 export default function Author() {
-  const [author, setAuthor] = useState<User>();
+  const [author, setAuthor] = useState<Author>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
 
-    delayPromise(fetchUser(2), 1000)
+    delayPromise(fetchAuthor(2), 1000)
       .then((user) => setAuthor(user))
       .then(() => setIsLoading(false));
   }, []);

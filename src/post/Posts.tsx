@@ -1,4 +1,4 @@
-import { fetchPosts } from '../utils/fetchPosts';
+import { fetchPosts } from './fetchPosts';
 import { wrapPromise } from '../utils/wrapPromise';
 import { delayPromise } from '../utils/delayPromise';
 import Post from './Post';

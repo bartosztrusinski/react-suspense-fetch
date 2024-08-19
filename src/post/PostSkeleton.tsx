@@ -1,4 +1,4 @@
-import type { Post } from '../utils/fetchPosts';
+import type { Post } from './fetchPosts';
 
 export default function Post() {
   return (
