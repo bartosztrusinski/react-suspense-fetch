@@ -10,7 +10,7 @@ export default function Author() {
   useEffect(() => {
     setIsLoading(true);
 
-    delayPromise(fetchUser(2), 2000)
+    delayPromise(fetchUser(2), 1000)
       .then((user) => setAuthor(user))
       .then(() => setIsLoading(false));
   }, []);

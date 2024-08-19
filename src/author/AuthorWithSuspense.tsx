@@ -3,7 +3,7 @@ import { wrapPromise } from '../utils/wrapPromise';
 import { delayPromise } from '../utils/delayPromise';
 
 // use wrapper to handle a promise within suspense
-const { read: getUser } = wrapPromise(delayPromise(fetchUser(5), 2000));
+const { read: getUser } = wrapPromise(delayPromise(fetchUser(5), 1500));
 
 export default function Author() {
   const author = getUser();
