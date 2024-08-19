@@ -1,23 +1,12 @@
-import { useEffect, useState } from 'react';
-import { fetchAuthor, type Author } from './fetchAuthor';
-import AuthorSkeleton from './AuthorSkeleton';
+import { fetchAuthor } from './fetchAuthor';
+import { wrapPromise } from '../utils/wrapPromise';
 import { delayPromise } from '../utils/delayPromise';
 
+// use wrapper to handle a promise within suspense
+const { read: getUser } = wrapPromise(delayPromise(fetchAuthor(5), 1500));
+
 export default function Author() {
-  const [author, setAuthor] = useState<Author>();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-
-    delayPromise(fetchAuthor(2), 1000)
-      .then((user) => setAuthor(user))
-      .then(() => setIsLoading(false));
-  }, []);
-
-  if (isLoading || !author) {
-    return <AuthorSkeleton />;
-  }
+  const author = getUser();
 
   return (
     <section className='author'>

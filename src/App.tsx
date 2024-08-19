@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import Author from './author/Author';
-import AuthorWithSuspense from './author/AuthorWithSuspense';
+import AuthorWithEffect from './author/AuthorWithEffect';
 import AuthorSkeleton from './author/AuthorSkeleton';
 import Posts from './post/Posts';
 import PostsSkeleton from './post/PostsSkeleton';
@@ -8,9 +8,9 @@ import PostsSkeleton from './post/PostsSkeleton';
 export default function App() {
   return (
     <main>
-      <Author />
+      <AuthorWithEffect />
       <Suspense fallback={<AuthorSkeleton />}>
-        <AuthorWithSuspense />
+        <Author />
       </Suspense>
       <Suspense fallback={<PostsSkeleton />}>
         <Posts />
