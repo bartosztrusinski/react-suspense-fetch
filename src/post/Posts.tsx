@@ -10,7 +10,7 @@ export default function Posts() {
   return (
     <section>
       {posts.map((post) => (
-        <Post {...post} />
+        <Post key={post.id} {...post} />
       ))}
     </section>
   );
