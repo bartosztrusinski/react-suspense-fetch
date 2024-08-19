@@ -1,19 +1,16 @@
 import { Suspense } from 'react';
 import Author from './author/Author';
 import AuthorWithSuspense from './author/AuthorWithSuspense';
+import AuthorSkeleton from './author/AuthorSkeleton';
 import Posts from './post/Posts';
 
 export default function App() {
   return (
     <main>
-      <section>
-        <Author />
-      </section>
-      <section>
-        <Suspense fallback={<p>Loading author...</p>}>
-          <AuthorWithSuspense />
-        </Suspense>
-      </section>
+      <Author />
+      <Suspense fallback={<AuthorSkeleton />}>
+        <AuthorWithSuspense />
+      </Suspense>
       <section>
         <Suspense fallback={<p>Loading posts...</p>}>
           <Posts />

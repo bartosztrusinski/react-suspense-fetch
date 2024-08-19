@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchUser, User } from '../utils/fetchUser';
+import AuthorSkeleton from './AuthorSkeleton';
+import { delayPromise } from '../utils/delayPromise';
 
 export default function Author() {
   const [author, setAuthor] = useState<User>();
@@ -8,17 +10,13 @@ export default function Author() {
   useEffect(() => {
     setIsLoading(true);
 
-    fetchUser(2)
+    delayPromise(fetchUser(2), 2000)
       .then((user) => setAuthor(user))
       .then(() => setIsLoading(false));
   }, []);
 
   if (isLoading || !author) {
-    return (
-      <section className='author'>
-        <p>Loading author...</p>
-      </section>
-    );
+    return <AuthorSkeleton />;
   }
 
   return (
