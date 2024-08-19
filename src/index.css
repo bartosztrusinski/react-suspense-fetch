@@ -105,15 +105,6 @@ section {
   height: 1.1rem;
 }
 
-.author__name--skeleton,
-.author__username--skeleton {
-  background-color: #555;
-  background-image: linear-gradient(90deg, #555 0, #777 13rem, #555 26rem);
-  background-size: 75rem;
-  border-radius: 0.2rem;
-  animation: shimmer 1s infinite linear;
-}
-
 .post {
   background-color: #333;
   padding: 1rem 1.2rem;
@@ -135,6 +126,33 @@ section {
   line-height: 1.7;
   font-size: 1rem;
   margin-bottom: 1.2rem;
+}
+
+.post__title--skeleton {
+  width: 90%;
+  height: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.post__title--skeleton:last-child {
+  margin-bottom: 1.2rem;
+}
+
+.post__body--skeleton {
+  width: 100%;
+  height: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.author__name--skeleton,
+.author__username--skeleton,
+.post__title--skeleton,
+.post__body--skeleton {
+  background-color: #555;
+  background-image: linear-gradient(90deg, #555 0, #777 13rem, #555 26rem);
+  background-size: 75rem;
+  border-radius: 0.2rem;
+  animation: shimmer 1s infinite linear;
 }
 
 @keyframes shimmer {
