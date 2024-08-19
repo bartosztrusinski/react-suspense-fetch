@@ -11,11 +11,9 @@ export default function App() {
       <Suspense fallback={<AuthorSkeleton />}>
         <AuthorWithSuspense />
       </Suspense>
-      <section>
-        <Suspense fallback={<p>Loading posts...</p>}>
-          <Posts />
-        </Suspense>
-      </section>
+      <Suspense fallback={<p>Loading posts...</p>}>
+        <Posts />
+      </Suspense>
     </main>
   );
 }
