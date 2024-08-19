@@ -1,3 +1,5 @@
+import useSWR from 'swr';
+
 export type Post = {
   id: number;
   title: string;
@@ -11,4 +13,12 @@ const fetcher = <T>(url: URL): Promise<T> =>
 
 export const fetchPosts = () => {
   return fetcher<Post[]>(new URL(`${postsUrl}`));
+};
+
+export const usePosts = () => {
+  const { data } = useSWR<Post[]>(postsUrl, fetcher, {
+    suspense: true,
+  });
+
+  return data as Post[];
 };
